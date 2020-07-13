@@ -1,4 +1,4 @@
-## Code for my portfolio build using 
+## Code for my portfolio built using 
 
 - React 
 - Next js
