@@ -13,20 +13,24 @@ const styles = (theme) => ({
   hi: {
     color: theme.palette.textGray.dark,
     fontFamily: 'TitilliumWebRegular',
+    letterSpacing: 2,
   },
   im: {
     color: theme.palette.background.default,
     fontWeight: 700,
     fontFamily: 'TitilliumWeb',
+    letterSpacing: 2,
   },
   name: {
     color: theme.palette.primary.main,
     fontWeight: 700,
     fontFamily: 'TitilliumWeb',
+    letterSpacing: 2,
   },
   whatim: {
     color: theme.palette.background.default,
     fontFamily: 'TitilliumWebRegular',
+    letterSpacing: 1.5,
   },
   resume: {
     minWidth: 140,
@@ -74,7 +78,7 @@ const Hero = (props: Props) => {
       </Typography>
       <Box
         display="flex"
-        mt={2}
+        mt={4}
         flex-direction="row"
         align="center"
         justifyContent="space-around"

@@ -9,7 +9,6 @@ import {
 import {
   withStyles,
 } from '@material-ui/styles';
-import About from './About';
 
 const styles = (theme) => ({
   banner: {
@@ -46,7 +45,6 @@ const Hero = (props: Props) => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <About />
           <img className={classes.banner} alt="Banner" src="/man.svg" />
         </Box>
       </Container>
