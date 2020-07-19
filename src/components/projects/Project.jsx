@@ -1,12 +1,9 @@
 // @flow
 import React from 'react';
 import {
-  Box,
   Container,
-  useMediaQuery,
-  Slide,
+  Grow,
   Grid,
-  Card,
 } from '@material-ui/core';
 import {
   withStyles,
@@ -23,7 +20,7 @@ const styles = (theme) => ({
   },
   container: {
     marginTop: theme.spacing(14),
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(10),
     zIndex: 1222,
   },
 });
@@ -38,10 +35,8 @@ type Props = {
 }
 const Hero = (props: Props) => {
   const { classes } = props;
-  const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-
   return (
-    <Slide in direction="down" timeout={600}>
+    <Grow in direction="down" timeout={600}>
       <Container
         classes={{ root: classes.container }}
         maxWidth="md"
@@ -54,7 +49,7 @@ const Hero = (props: Props) => {
           ))}
         </Grid>
       </Container>
-    </Slide>
+    </Grow>
   );
 };
 

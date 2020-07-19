@@ -45,7 +45,7 @@ const Hero = (props: Props) => {
       <Typography variant="h6" classes={{ root: classes.skilsLabel }}>
         SKILLS :
       </Typography>
-      {skills.map((skill) => <Stack key-={skill} label={skill} />)}
+      {skills.map((skill) => <Stack key={skill} label={skill} />)}
     </Box>
   );
 };

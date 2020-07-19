@@ -51,40 +51,72 @@ const iconMap = {
 };
 const Bottom = (props: Props) => {
   const { classes } = props;
-  return (
-    <Hidden smDown>
+  const mobileView = () => (
+    <Box
+      position="absolute"
+      width={1}
+      bottom={0}
+      zIndex={2}
+    >
       <Box
-        position="absolute"
-        width={1}
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
         height={1}
-        bottom={0}
+        width={1}
+        alignItems="flex-end"
       >
-        <Box
-          display="flex"
-          flexDirection="row"
-          justifyContent="space-between"
-          width={1}
-          height={1}
-        >
-          <Box display="flex" ml={8} flexDirection="column" alignItems="center" justifyContent="flex-end">
-            <Box mb={4}>
-              {['linkedln', 'twitter', 'github'].map((icon) => (
-                <a alt="icon" href="/">
-                  <Box mb={1} className={classes.icon}>
-                    {iconMap[icon]}
-                  </Box>
-                </a>
-              ))}
-            </Box>
-            <Divider classes={{ root: classes.divider }} orientation="vertical" />
-          </Box>
-          <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-end">
-            <Typography classes={{ root: classes.email }}>vivek2neel@gmail.com</Typography>
-            <Divider classes={{ root: classes.divider }} orientation="vertical" />
-          </Box>
+        <Box display="flex" flexDirection="row">
+          {['linkedln', 'twitter', 'github'].map((icon) => (
+            <a alt="icon" href="/" key={icon}>
+              <Box mb={4} p={2} className={classes.icon}>
+                {iconMap[icon]}
+              </Box>
+            </a>
+          ))}
         </Box>
       </Box>
-    </Hidden>
+    </Box>
+  );
+  return (
+    <>
+      <Hidden mdUp>
+        {mobileView()}
+      </Hidden>
+      <Hidden smDown>
+        <Box
+          position="absolute"
+          width={1}
+          height={1}
+          bottom={0}
+        >
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            width={1}
+            height={1}
+          >
+            <Box display="flex" ml={8} flexDirection="column" alignItems="center" justifyContent="flex-end">
+              <Box mb={4}>
+                {['linkedln', 'twitter', 'github'].map((icon) => (
+                  <a alt="icon" href="/" key={icon}>
+                    <Box mb={1} className={classes.icon}>
+                      {iconMap[icon]}
+                    </Box>
+                  </a>
+                ))}
+              </Box>
+              <Divider classes={{ root: classes.divider }} orientation="vertical" />
+            </Box>
+            <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-end">
+              <Typography classes={{ root: classes.email }}>vivek2neel@gmail.com</Typography>
+              <Divider classes={{ root: classes.divider }} orientation="vertical" />
+            </Box>
+          </Box>
+        </Box>
+      </Hidden>
+    </>
   );
 };
 

@@ -2,7 +2,6 @@
 import React from 'react';
 import {
   Box,
-  Slide,
 } from '@material-ui/core';
 import Hero from '../src/components/Hero';
 import Header from '../src/components/Header';

@@ -1,7 +1,7 @@
+/* eslint-disable react/jsx-indent */
 // @flow
 import React from 'react';
 import {
-  Button,
   IconButton,
 } from '@material-ui/core';
 import {
@@ -29,8 +29,8 @@ const projects: ProjectData[] = [
     contentImg: '/memorang_content.svg',
     actions: <IconButton href="https://www.memorangapp.com/">
       <Web />
-    </IconButton>,
-    stacks: ["next-js" ,'react', 'material-ui', 'redux', 'relay', 'appsync', 'react-relay-offline'],
+             </IconButton>,
+    stacks: ['next-js', 'react', 'material-ui', 'redux', 'relay', 'appsync', 'react-relay-offline'],
   },
   {
     title: 'Memorang Mobile',
@@ -63,7 +63,7 @@ const projects: ProjectData[] = [
       <IconButton href="https://apps.apple.com/us/app/moviebuff/id1296305530">
         <Apple />
       </IconButton>
-    </>,
+             </>,
     stacks: ['react', 'react-native', 'redux'],
   },
   {

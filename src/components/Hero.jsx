@@ -4,7 +4,7 @@ import {
   Box,
   Container,
   useMediaQuery,
-  Slide,
+  Grow,
 } from '@material-ui/core';
 import {
   withStyles,
@@ -22,7 +22,7 @@ const styles = (theme) => ({
   },
   container: {
     marginTop: theme.spacing(4),
-    zIndex: 33333,
+    zIndex: 1,
     height: '100vh',
   },
 });
@@ -40,7 +40,7 @@ const Hero = (props: Props) => {
   const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   return (
-    <Slide in direction="down" timeout={600}>
+    <Grow in direction="down" timeout={600}>
       <Container
         classes={{ root: classes.container }}
         maxWidth="md"
@@ -56,7 +56,7 @@ const Hero = (props: Props) => {
           <img className={classes.banner} alt="Banner" src="/man.svg" />
         </Box>
       </Container>
-    </Slide>
+    </Grow>
   );
 };
 

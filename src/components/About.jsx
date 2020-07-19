@@ -32,6 +32,16 @@ const styles = (theme) => ({
     fontFamily: 'TitilliumWebRegular',
     letterSpacing: 1.5,
   },
+  lead: {
+    color: theme.palette.background.default,
+    fontFamily: 'TitilliumWebRegular',
+    letterSpacing: 1.5,
+    fontSize: '1rem',
+  },
+  work: {
+    color: theme.palette.primary.main,
+    fontFamily: 'TitilliumWeb',
+  },
   resume: {
     minWidth: 140,
   },
@@ -47,7 +57,9 @@ type Classes = {
   whatim: string,
   resume: string,
   contact: string,
-  im: string
+  im: string,
+  lead: string,
+  work: string
 }
 
 type Props = {
@@ -76,6 +88,10 @@ const Hero = (props: Props) => {
       <Typography variant="h5" className={classes.whatim}>
         I&apos;m a Web/Mobile developer
       </Typography>
+      <Typography variant="h5" className={classes.lead}>
+        Frontend Lead @
+        <a href="https://www.memorangapp.com/" className={classes.work}>Memorang</a>
+      </Typography>
       <Box
         display="flex"
         mt={4}
@@ -86,11 +102,13 @@ const Hero = (props: Props) => {
         <Button
           className={classes.resume}
           color="primary"
+          href="https://github.com/VivekNeel/me/raw/master/src/resume.pdf?raw=true"
           variant="contained"
         >
           Resume
         </Button>
         <Button
+          href="mailto:vivek2neel@gmail.com"
           className={classes.contact}
           variant="contained"
           color="secondary"
