@@ -5,12 +5,16 @@ import {
   Container,
   useMediaQuery,
   Slide,
-  Typography,
+  Grid,
+  Card,
 } from '@material-ui/core';
 import {
   withStyles,
 } from '@material-ui/styles';
-import Skills from './Skills';
+import ProjectCard from './ProjectCard';
+import {
+  projects,
+} from './utils';
 
 const styles = (theme) => ({
   banner: {
@@ -18,9 +22,9 @@ const styles = (theme) => ({
     heigth: 500,
   },
   container: {
-    marginTop: theme.spacing(4),
-    zIndex: 1,
-    height: '100vh',
+    marginTop: theme.spacing(14),
+    marginBottom: theme.spacing(2),
+    zIndex: 1222,
   },
 });
 
@@ -42,21 +46,13 @@ const Hero = (props: Props) => {
         classes={{ root: classes.container }}
         maxWidth="md"
       >
-        <Box
-          display="flex"
-          height="100%"
-          flexDirection={smDown ? 'column' : 'row'}
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Box mr={5} textAlign="center">
-            <Typography variant="subtitle1">
-              I mostly build mobile and web applications. I have 5 years of experience working with
-              react & react native.
-            </Typography>
-          </Box>
-          <Skills />
-        </Box>
+        <Grid spacing={2} container justify="center">
+          {projects.map((project) => (
+            <Grid item key={project.title} xs={12} md={4} sm={6}>
+              <ProjectCard project={project} />
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Slide>
   );

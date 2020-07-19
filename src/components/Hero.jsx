@@ -14,11 +14,12 @@ import About from './About';
 const styles = (theme) => ({
   banner: {
     width: 500,
-    heigth: 500,
+    height: 500,
   },
   container: {
     marginTop: theme.spacing(4),
     zIndex: 1,
+    height: '100vh',
   },
 });
 
@@ -45,6 +46,7 @@ const Hero = (props: Props) => {
           flexDirection={smDown ? 'column' : 'row'}
           justifyContent="space-between"
           alignItems="center"
+          height="100%"
         >
           <About />
           <img className={classes.banner} alt="Banner" src="/man.svg" />

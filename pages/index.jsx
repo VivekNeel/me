@@ -8,17 +8,18 @@ import Hero from '../src/components/Hero';
 import Header from '../src/components/Header';
 import Bottom from '../src/components/Bottom';
 import About from '../src/components/about/About';
+import Project from '../src/components/projects/Project';
 
 const Index = () => {
   const [navigationCounter, setNavigationCounter] = React.useState(0);
-  const navigations = [<Hero />, <About />];
+  const navigations = [<Hero />, <About />, <Project />];
 
   const handleNavigation = (index) => {
     setNavigationCounter(index);
   };
   return (
     <Box
-      height="100vh"
+      height={1}
       width="100%"
       display="flex"
       bgcolor="secondary.main"
