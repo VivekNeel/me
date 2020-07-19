@@ -39,10 +39,24 @@ type Classes = {
 
 type Props = {
   classes: Classes,
-  handleNavigation: (index: number) => void
+  handleNavigation: (index: number) => void,
+  navigationCounter: number
 }
 const Header = (props: Props) => {
-  const { classes, handleNavigation } = props;
+  const { classes, handleNavigation, navigationCounter } = props;
+
+  const label = () => {
+    switch (navigationCounter) {
+      case 0:
+        return 'Vivek';
+      case 1:
+        return 'About';
+      case 2:
+        return 'Projects';
+      default:
+        return null;
+    }
+  };
   return (
     <AppBar
       classes={{ colorPrimary: classes.appbar }}
@@ -54,7 +68,7 @@ const Header = (props: Props) => {
           <Box fontFamily="TitilliumWeb">
             <Typography component="div" className={classes.text}>
               {'<'}
-              <Typography className={classes.name} display="inline">Vivek</Typography>
+              <Typography className={classes.name} display="inline">{label()}</Typography>
               <Typography className={classes.text} display="inline">{'/>'}</Typography>
             </Typography>
           </Box>

@@ -5,6 +5,7 @@ import {
   Box,
   Divider,
   Typography,
+  Hidden,
 } from '@material-ui/core';
 import {
   Twitter,
@@ -51,37 +52,39 @@ const iconMap = {
 const Bottom = (props: Props) => {
   const { classes } = props;
   return (
-    <Box
-      position="absolute"
-      width={1}
-      height={1}
-      bottom={0}
-    >
+    <Hidden smDown>
       <Box
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-between"
+        position="absolute"
         width={1}
         height={1}
+        bottom={0}
       >
-        <Box display="flex" ml={8} flexDirection="column" alignItems="center" justifyContent="flex-end">
-          <Box mb={4}>
-            {['linkedln', 'twitter', 'github'].map((icon) => (
-              <a alt="icon" href="/">
-                <Box mb={1} className={classes.icon}>
-                  {iconMap[icon]}
-                </Box>
-              </a>
-            ))}
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+          width={1}
+          height={1}
+        >
+          <Box display="flex" ml={8} flexDirection="column" alignItems="center" justifyContent="flex-end">
+            <Box mb={4}>
+              {['linkedln', 'twitter', 'github'].map((icon) => (
+                <a alt="icon" href="/">
+                  <Box mb={1} className={classes.icon}>
+                    {iconMap[icon]}
+                  </Box>
+                </a>
+              ))}
+            </Box>
+            <Divider classes={{ root: classes.divider }} orientation="vertical" />
           </Box>
-          <Divider classes={{ root: classes.divider }} orientation="vertical" />
-        </Box>
-        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-end">
-          <Typography classes={{ root: classes.email }}>vivek2neel@gmail.com</Typography>
-          <Divider classes={{ root: classes.divider }} orientation="vertical" />
+          <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-end">
+            <Typography classes={{ root: classes.email }}>vivek2neel@gmail.com</Typography>
+            <Divider classes={{ root: classes.divider }} orientation="vertical" />
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </Hidden>
   );
 };
 

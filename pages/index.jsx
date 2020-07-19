@@ -26,7 +26,10 @@ const Index = () => {
       flexDirection="column"
       position="relative"
     >
-      <Header handleNavigation={handleNavigation} />
+      <Header
+        navigationCounter={navigationCounter}
+        handleNavigation={handleNavigation}
+      />
       {navigations[navigationCounter]}
       <Bottom />
     </Box>

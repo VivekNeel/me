@@ -22,11 +22,16 @@ const styles = (theme) => ({
     zIndex: 1,
     height: '100vh',
   },
+  about: {
+    fontFamily: 'TitilliumWebRegular',
+    letterSpacing: 1.5,
+  },
 });
 
 type Classes = {
   banner: string,
-  container: string
+  container: string,
+  about: string
 }
 
 type Props = {
@@ -46,11 +51,11 @@ const Hero = (props: Props) => {
           display="flex"
           height="100%"
           flexDirection={smDown ? 'column' : 'row'}
-          justifyContent="space-between"
+          justifyContent={smDown ? 'center' : 'space-between'}
           alignItems="center"
         >
           <Box mr={5} textAlign="center">
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" classes={{ root: classes.about }}>
               I mostly build mobile and web applications. I have 5 years of experience working with
               react & react native.
             </Typography>

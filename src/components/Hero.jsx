@@ -15,10 +15,14 @@ const styles = (theme) => ({
   banner: {
     width: 500,
     height: 500,
+    [theme.breakpoints.down('xs')]: {
+      width: 200,
+      height: 200,
+    },
   },
   container: {
     marginTop: theme.spacing(4),
-    zIndex: 1,
+    zIndex: 33333,
     height: '100vh',
   },
 });
@@ -44,7 +48,7 @@ const Hero = (props: Props) => {
         <Box
           display="flex"
           flexDirection={smDown ? 'column' : 'row'}
-          justifyContent="space-between"
+          justifyContent={smDown ? 'center' : 'space-between'}
           alignItems="center"
           height="100%"
         >
