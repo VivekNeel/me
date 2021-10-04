@@ -3,6 +3,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { NextSeo } from 'next-seo';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import './global-styles.css';
@@ -22,10 +24,15 @@ export default function MyApp(props: Props) {
     }
   }, []);
 
+  const title = 'VivekNeel | Portfolio';
+  const description = 'VivekNeel is a Lead Frontend Engineer @Memorang. He has total 5 years of experience working with react/react-native';
   return (
     <>
+      <NextSeo
+        title={title}
+        description={description}
+      />
       <Head>
-        <title>My page</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>

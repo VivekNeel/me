@@ -8,7 +8,7 @@ import {
   Hidden,
 } from '@material-ui/core';
 import {
-  Twitter,
+  StackOverflow,
   Linkedin,
   Github,
 } from 'mdi-material-ui';
@@ -46,9 +46,21 @@ type Props = {
 
 const iconMap = {
   linkedln: <Linkedin />,
-  twitter: <Twitter />,
+  stackoverflow: <StackOverflow />,
   github: <Github />,
 };
+
+const links = [{
+  title: 'linkedln',
+  link: 'https://www.linkedin.com/in/vivek-neel-65585b103/',
+}, {
+  title: 'github',
+  link: 'https://github.com/VivekNeel',
+},
+{
+  title: 'stackoverflow',
+  link: 'https://stackoverflow.com/users/3052300/vivek-neel',
+}];
 const Bottom = (props: Props) => {
   const { classes } = props;
   const mobileView = () => (
@@ -67,10 +79,19 @@ const Bottom = (props: Props) => {
         alignItems="flex-end"
       >
         <Box display="flex" flexDirection="row">
-          {['linkedln', 'twitter', 'github'].map((icon) => (
-            <a alt="icon" href="/" key={icon}>
+          {links.map(({
+            title,
+            link,
+          }) => (
+            <a
+              alt="icon"
+              href={link}
+              rel="noreferrer"
+              target="_blank"
+              key={title}
+            >
               <Box mb={4} p={2} className={classes.icon}>
-                {iconMap[icon]}
+                {iconMap[title]}
               </Box>
             </a>
           ))}
@@ -99,10 +120,19 @@ const Bottom = (props: Props) => {
           >
             <Box display="flex" ml={8} flexDirection="column" alignItems="center" justifyContent="flex-end">
               <Box mb={4}>
-                {['linkedln', 'twitter', 'github'].map((icon) => (
-                  <a alt="icon" href="/" key={icon}>
+                {links.map(({
+                  title,
+                  link,
+                }) => (
+                  <a
+                    alt="icon"
+                    href={link}
+                    rel="noreferrer"
+                    target="_blank"
+                    key={title}
+                  >
                     <Box mb={1} className={classes.icon}>
-                      {iconMap[icon]}
+                      {iconMap[title]}
                     </Box>
                   </a>
                 ))}
