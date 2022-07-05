@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vivek",
+      "sha256_cert_fingerprints": [
+        "9B:EB:AA:91:C4:9E:7E:67:C0:CF:B0:A2:D6:C8:2A:A0:14:34:76:C2:3A:D0:AE:53:75:26:A5:E1:63:3A:20:BB"
+      ]
+    }
+  }
+]
